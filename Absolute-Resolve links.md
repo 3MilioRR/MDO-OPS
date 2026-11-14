@@ -15,6 +15,7 @@ Enlaces de Interés
 https://breached.company/operation-absolute-resolve-a-deep-dive-into-the-cyber-osint-and-intelligence-operations-behind-maduros-capture/   
 https://www.csis.org/analysis/imagery-venezuela-shows-surgical-strike-not-shock-and-awe   
 https://www.realcleardefense.com/military-strategy/articles/operation-absolute-resolve-anatomy-of-a-modern-decapitation-strike-2026-01-05  
+https://www.defenseone.com/threats/2026/01/inside-absolute-resolve-regime-change-assault-venezuela/410440/   
 https://sofsupport.org/operation-absolute-resolve-anatomy-of-a-modern-decapitation-strike/  
 https://osintmethat.com/2026/01/12/the-shadow-of-operation-absolute-resolve/   
 https://mwi.westpoint.edu/mwi-podcast-analyzing-operation-absolute-resolve/  

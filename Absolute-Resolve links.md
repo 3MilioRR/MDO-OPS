@@ -2,11 +2,11 @@
 DOCUMENTOS   
 
 Guillem Colom Piella — "Determinación Absoluta: una campaña multidominio contra Venezuela".  
-https://www.defensa.gob.es/ceseden/-/ieee/2026-determinacion-absoluta-venezuela-opinion?utm_source=chatgpt.com  
+https://www.defensa.gob.es/ceseden/-/ieee/2026-determinacion-absoluta-venezuela-opinion     
 Louise Marie Hurel — "Layered Ambiguity: US Cyber Capabilities in the Raid to Extract Maduro from Venezuela", RUSI, 14 enero 2026.   
 https://www.rusi.org/explore-our-research/publications/commentary/layered-ambiguity-us-cyber-capabilities-raid-extract-maduro-venezuela   
 CSIS: "Imagery from Venezuela Shows a Surgical Strike, Not Shock and Awe"   
-https://www.csis.org/analysis/imagery-venezuela-shows-surgical-strike-not-shock-and-awe?utm_source=chatgpt.com   
+https://www.csis.org/analysis/imagery-venezuela-shows-surgical-strike-not-shock-and-awe       
 
 
 Enlaces de Interés

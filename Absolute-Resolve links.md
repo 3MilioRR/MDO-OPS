@@ -17,10 +17,16 @@ https://www.csis.org/analysis/imagery-venezuela-shows-surgical-strike-not-shock-
 https://www.realcleardefense.com/military-strategy/articles/operation-absolute-resolve-anatomy-of-a-modern-decapitation-strike-2026-01-05  
 https://www.defenseone.com/threats/2026/01/inside-absolute-resolve-regime-change-assault-venezuela/410440/   
 https://sofsupport.org/operation-absolute-resolve-anatomy-of-a-modern-decapitation-strike/  
+NetBlocks: https://x.com/netblocks/status/2007434366545174662    
 https://osintmethat.com/2026/01/12/the-shadow-of-operation-absolute-resolve/   
-https://mwi.westpoint.edu/mwi-podcast-analyzing-operation-absolute-resolve/ 
+https://mwi.westpoint.edu/mwi-podcast-analyzing-operation-absolute-resolve/  
 https://unit42.paloaltonetworks.com/shadow-campaigns-uncovering-global-espionage/   
 https://www.google.com/maps/d/u/0/viewer?mid=18l5LA98CVgFqlXxnzPogEfny_a6wDiQ&femb=1&ll=10.443594172216985%2C-66.91457198736113&z=15   
+
+IA     
+https://www.reuters.com/world/americas/us-used-anthropics-claude-during-the-venezuela-raid-wsj-reports-2026-02-13/   
+https://www.axios.com/2026/02/13/anthropic-claude-maduro-raid-pentagon   
+https://www.washingtonpost.com/technology/2026/02/22/pentagon-anthropic-ai-dispute/   
 
 ⭐⭐⭐    
 https://gbnt1952.substack.com/p/operation-absolute-resolve  

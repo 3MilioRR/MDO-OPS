@@ -1,0 +1,405 @@
+{
+	"name": "Absolute Resolve",
+	"versions": {
+		"attack": "1",
+		"navigator": "4.8.2",
+		"layer": "4.4"
+	},
+	"domain": "DISARM",
+	"description": "",
+	"filters": {
+		"platforms": [
+			"Windows",
+			"Linux",
+			"Mac"
+		]
+	},
+	"sorting": 0,
+	"layout": {
+		"layout": "side",
+		"aggregateFunction": "average",
+		"showID": false,
+		"showName": true,
+		"showAggregateScores": false,
+		"countUnscored": false
+	},
+	"hideDisabled": false,
+	"techniques": [
+		{
+			"techniqueID": "T0004",
+			"tactic": "develop-narratives",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0060",
+			"tactic": "persist-in-the-information-environment",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0065",
+			"tactic": "establish-assets",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0066",
+			"tactic": "plan-objectives",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0073",
+			"tactic": "plan-strategy",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0074",
+			"tactic": "plan-strategy",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0075",
+			"tactic": "plan-objectives",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0080",
+			"tactic": "target-audience-analysis",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0080.001",
+			"tactic": "target-audience-analysis",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0080.003",
+			"tactic": "target-audience-analysis",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0080.004",
+			"tactic": "target-audience-analysis",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0085",
+			"tactic": "develop-content",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0085.004",
+			"tactic": "develop-content",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0097",
+			"tactic": "establish-legitimacy",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0110",
+			"tactic": "select-channels-and-affordances",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0111",
+			"tactic": "select-channels-and-affordances",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0111.001",
+			"tactic": "select-channels-and-affordances",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0114",
+			"tactic": "deliver-content",
+			"color": "#fca2a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0114.001",
+			"tactic": "deliver-content",
+			"color": "#fca2a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0114.002",
+			"tactic": "deliver-content",
+			"color": "#fca2a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0118",
+			"tactic": "maximise-exposure",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0129",
+			"tactic": "persist-in-the-information-environment",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0129.010",
+			"tactic": "persist-in-the-information-environment",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0132",
+			"tactic": "assess-effectiveness",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0132.002",
+			"tactic": "assess-effectiveness",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0133",
+			"tactic": "assess-effectiveness",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0133.002",
+			"tactic": "assess-effectiveness",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0134",
+			"tactic": "assess-effectiveness",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0134.001",
+			"tactic": "assess-effectiveness",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0134.002",
+			"tactic": "assess-effectiveness",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0146",
+			"tactic": "establish-assets",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0146.001",
+			"tactic": "establish-assets",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0152",
+			"tactic": "select-channels-and-affordances",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0152.006",
+			"tactic": "select-channels-and-affordances",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0152.007",
+			"tactic": "select-channels-and-affordances",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0152.010",
+			"tactic": "select-channels-and-affordances",
+			"color": "#fdd0a2",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		}
+	],
+	"gradient": {
+		"colors": [
+			"#ff6666ff",
+			"#ffe766ff",
+			"#8ec843ff"
+		],
+		"minValue": 0,
+		"maxValue": 100
+	},
+	"legendItems": [],
+	"metadata": [],
+	"links": [],
+	"showTacticRowBackground": false,
+	"tacticRowBackground": "#dddddd",
+	"selectTechniquesAcrossTactics": true,
+	"selectSubtechniquesWithParent": false
+}

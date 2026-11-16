@@ -7,7 +7,10 @@ Louise Marie Hurel — "Layered Ambiguity: US Cyber Capabilities in the Raid to 
 https://www.rusi.org/explore-our-research/publications/commentary/layered-ambiguity-us-cyber-capabilities-raid-extract-maduro-venezuela   
 CSIS: "Imagery from Venezuela Shows a Surgical Strike, Not Shock and Awe"   
 https://www.csis.org/analysis/imagery-venezuela-shows-surgical-strike-not-shock-and-awe       
-
+Stephen Dietrich-Kolokouris: Embedded Persistent Threats, Sleeper Malware, and the Cyber-Kinetic Operation Against Venezuela    
+https://www.researchgate.net/publication/400281161_Embedded_Persistent_Threats_and_the_2026_Venezuela_Cyber-Kinetic_Operation_Evidence_for_Pre-Positioned_Cyber_Capabilities_in_Limited_Regime_Intervention    
+Varios autores: CYBER PRESSURE, THE PDVSA INCIDENT, AND THE CAPTURE OF NICOLÁS MADURO: AN OPEN-SOURCE ASSESSMENT    
+https://ojs.veredasjournal.com/index.php/veredas/article/view/5479    
 
 🖇️Enlaces de Interés
 

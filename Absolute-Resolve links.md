@@ -24,7 +24,7 @@ NetBlocks: https://x.com/netblocks/status/2007434366545174662
 https://osintmethat.com/2026/01/12/the-shadow-of-operation-absolute-resolve/   
 https://mwi.westpoint.edu/mwi-podcast-analyzing-operation-absolute-resolve/  
 https://unit42.paloaltonetworks.com/shadow-campaigns-uncovering-global-espionage/   
-https://www.google.com/maps/d/u/0/viewer?mid=18l5LA98CVgFqlXxnzPogEfny_a6wDiQ&femb=1&ll=10.443594172216985%2C-66.91457198736113&z=15   
+Google Maps (mapa efectos cinéticos y vuelos SOAR): https://www.google.com/maps/d/u/0/viewer?mid=18l5LA98CVgFqlXxnzPogEfny_a6wDiQ&femb=1&ll=10.443594172216985%2C-66.91457198736113&z=15   
 
 IA     
 https://www.reuters.com/world/americas/us-used-anthropics-claude-during-the-venezuela-raid-wsj-reports-2026-02-13/   

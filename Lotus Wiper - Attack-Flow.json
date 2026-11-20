@@ -1,0 +1,462 @@
+{
+  "type": "bundle",
+  "id": "bundle--44a8793e-d4eb-48bf-9f94-05075affa594",
+  "objects": [
+    {
+      "type": "attack-flow",
+      "spec_version": "2.1",
+      "id": "attack-flow--f2763e86-c3eb-4cee-baeb-b6940b548937",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "name": "Lotus Wiper – secuencia reconstruida a partir del análisis de Kaspersky",
+      "description": "Reconstrucción del orden lógico de ejecución descrito por Kaspersky para la cadena Lotus Wiper. No representa una cronología horaria del incidente ni demuestra que Lotus Wiper fuese ejecutado contra PDVSA. El acceso inicial y el despliegue previo de los binarios no están descritos técnicamente; se representan como prerrequisito inferido. Las acciones sin technique_id son comportamientos descritos por la fuente que no se han forzado a una técnica ATT&CK. Las ramas representan la lógica condicional de los marcadores XML.",
+      "scope": "malware",
+      "start_refs": [
+        "attack-action--caf911e4-10e3-420c-81f2-16ac87e1c307"
+      ],
+      "external_references": [
+        {
+          "source_name": "Kaspersky Securelist – Lotus Wiper: a new threat targeting the energy and utilities sector",
+          "description": "Análisis técnico principal; publicado el 21 de abril de 2026.",
+          "url": "https://securelist.com/tr/lotus-wiper/119472/"
+        },
+        {
+          "source_name": "MITRE Center for Threat-Informed Defense – Attack Flow v4.0 Language",
+          "description": "Especificación de objetos Attack Flow sobre STIX 2.1.",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow/language/"
+        }
+      ],
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      }
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--caf911e4-10e3-420c-81f2-16ac87e1c307",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Acceso previo y preposicionamiento de los artefactos",
+      "description": "PRERREQUISITO INFERIDO. Kaspersky concluye que los ejecutables nstats.exe, nevent.exe y ndesign.exe debían estar previamente depositados en los equipos y que el actor ya disponía de acceso al entorno comprometido. El informe no identifica el vector de acceso inicial, la cuenta utilizada ni el mecanismo de despliegue. No se asigna técnica ATT&CK por falta de evidencia suficiente.",
+      "confidence": 80,
+      "effect_refs": [
+        "attack-action--9a055e14-9b43-4525-91a6-2781f7427b5a"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--9a055e14-9b43-4525-91a6-2781f7427b5a",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Ejecución de OhSyncNow.bat",
+      "description": "Kaspersky identifica OhSyncNow.bat como primer artefacto desplegado. El script prepara el directorio de trabajo y continúa con las acciones de preparación y comprobación de la red descritas en los pasos siguientes.",
+      "technique_id": "T1059.003",
+      "tactic_id": "execution",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-action--e907fb9e-c702-4cfe-b19f-318770b840e7"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--d46ba06f-e7b3-4d89-9e96-24d6ce921a65",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Comprobación de NETLOGON y del marcador remoto OHSync.xml",
+      "description": "El BAT comprueba la disponibilidad del recurso compartido NETLOGON y busca OHSync.xml en una ruta de red construida con el nombre de la organización. Si NETLOGON no está disponible, introduce una espera aleatoria de hasta 20 minutos antes de reintentar. La presencia del XML actúa como señal para coordinar la ejecución.",
+      "technique_id": "T1135",
+      "tactic_id": "discovery",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-condition--38cb563c-5c7e-4af8-9649-ed8242f2d0ff"
+      ]
+    },
+    {
+      "type": "attack-condition",
+      "spec_version": "2.1",
+      "id": "attack-condition--38cb563c-5c7e-4af8-9649-ed8242f2d0ff",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "description": "¿Está disponible el recurso NETLOGON y existe el marcador remoto OHSync.xml?",
+      "confidence": 90,
+      "on_true_refs": [
+        "attack-action--f39a4db4-55b9-473b-abee-2278412015d9"
+      ],
+      "on_false_refs": []
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--f39a4db4-55b9-473b-abee-2278412015d9",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Ejecución de notesreg.bat",
+      "description": "Cuando se cumple la condición del marcador remoto, OhSyncNow.bat ejecuta notesreg.bat desde el directorio local. Kaspersky indica que la comprobación del marcador local OHSync.xml también forma parte de la lógica de selección del equipo; la ausencia del marcador local no impide que continúe la siguiente fase.",
+      "technique_id": "T1059.003",
+      "tactic_id": "execution",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-action--547f84bd-b7dc-4013-a595-bf6648744d69"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--547f84bd-b7dc-4013-a595-bf6648744d69",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Comprobación del marcador de ejecución única",
+      "description": "notesreg.bat comprueba la existencia de otro fichero XML utilizado como marcador para determinar si la cadena ya se había ejecutado en el equipo.",
+      "technique_id": "T1083",
+      "tactic_id": "discovery",
+      "confidence": 90,
+      "effect_refs": [
+        "attack-condition--43769eff-18f1-4fb2-a2a6-20ec32a15743"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--f3aef169-81b6-4dab-91a9-ca27dd05d4a0",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Autodestrucción de artefactos si ya se ejecutó",
+      "description": "Si el marcador ya existe, el script elimina los artefactos maliciosos de la cadena y termina. Kaspersky interpreta este comportamiento como un mecanismo para limitar la ejecución a una sola vez.",
+      "technique_id": "T1070.004",
+      "tactic_id": "defense-evasion",
+      "confidence": 90
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--5bb84871-7f28-424d-9446-5a69307864ec",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Enumeración de cuentas locales",
+      "description": "Si el marcador no existe, el BAT enumera las cuentas locales del equipo, excluyendo algunos nombres concretos, entre ellos el asociado al departamento de TI de la organización.",
+      "technique_id": "T1087.001",
+      "tactic_id": "discovery",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-action--65454ce4-c89e-4c4d-a4a7-15ceee592170"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--65454ce4-c89e-4c4d-a4a7-15ceee592170",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Bloqueo de cuentas mediante cambio de contraseña y desactivación",
+      "description": "El script asigna contraseñas aleatorias a las cuentas enumeradas y las marca como inactivas mediante el comando net user. Esta acción impide el acceso de los usuarios afectados.",
+      "technique_id": "T1531",
+      "tactic_id": "impact",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-action--80091468-a6a3-4b23-85d1-15fc9ca6fc02"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--80091468-a6a3-4b23-85d1-15fc9ca6fc02",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Modificación de CachedLogonsCount",
+      "description": "El BAT modifica el valor CachedLogonsCount del registro de Windows y lo establece a cero, deshabilitando los inicios de sesión almacenados en caché y dificultando el acceso cuando no hay conectividad con el dominio.",
+      "technique_id": "T1112",
+      "tactic_id": "defense-evasion",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-action--c84f11a5-b463-4b38-9328-aba1e4dd9797"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--c84f11a5-b463-4b38-9328-aba1e4dd9797",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Cierre forzado de sesiones activas",
+      "description": "El script consulta las sesiones mediante qwinsta y ejecuta logoff sobre las sesiones activas identificadas. Kaspersky describe esta acción como parte de la manipulación del acceso al dispositivo.",
+      "confidence": 90,
+      "effect_refs": [
+        "attack-action--dc1f411f-c4f6-4001-bce1-f3ff8553523c"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--dc1f411f-c4f6-4001-bce1-f3ff8553523c",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Deshabilitación de interfaces de red",
+      "description": "El BAT enumera las interfaces de red con netsh y las deshabilita. El artículo describe la acción, pero no le asigna una técnica ATT&CK específica; se mantiene sin mapeo para no forzar una equivalencia.",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-action--f43b06ba-1984-42ee-aeeb-7d03645db53e"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--f43b06ba-1984-42ee-aeeb-7d03645db53e",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Borrado de volúmenes mediante diskpart clean all",
+      "description": "El script enumera las unidades lógicas con WMIC y ejecuta diskpart clean all sobre los volúmenes. Kaspersky indica que clean all sobrescribe con ceros el contenido del disco.",
+      "technique_id": "T1561.001",
+      "tactic_id": "impact",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-action--051eaf3c-e5c0-4a3e-bdea-30c51ead53b0"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--051eaf3c-e5c0-4a3e-bdea-30c51ead53b0",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Destrucción masiva de ficheros mediante robocopy /MIR",
+      "description": "El BAT utiliza robocopy /MIR para replicar una estructura espejo sobre los directorios del sistema, sobrescribiendo contenido o eliminando elementos que no están en el origen. Se modela como destrucción de datos.",
+      "technique_id": "T1485",
+      "tactic_id": "impact",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-action--a397516d-53c1-4620-ab4c-7d43c7b2f8f5"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--a397516d-53c1-4620-ab4c-7d43c7b2f8f5",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Agotamiento del espacio libre con DiskFillerFile",
+      "description": "El script calcula el espacio libre de la unidad del sistema mediante fsutil y crea DiskFillerFile con un tamaño que prácticamente consume todo ese espacio.",
+      "technique_id": "T1499.001",
+      "tactic_id": "impact",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-action--fc9ba4a3-d2ea-4bc4-a335-21d459f85067"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--fc9ba4a3-d2ea-4bc4-a335-21d459f85067",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Ejecución de nstats.exe y descodificación XOR del implante",
+      "description": "El BAT ejecuta nstats.exe con nevent.exe y ndesign.exe como argumentos. nevent.exe contiene el implante cifrado mediante XOR y nstats.exe lo descodifica, dejando el ejecutable final en ndesign.exe. Kaspersky identifica esta operación como preparación y recuperación del payload Lotus Wiper.",
+      "technique_id": "T1140",
+      "tactic_id": "defense-evasion",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-action--1a25b447-f59f-47e3-8823-fa42bd9d02d5"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--1a25b447-f59f-47e3-8823-fa42bd9d02d5",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Ejecución de Lotus Wiper y eliminación de puntos de restauración",
+      "description": "Lotus Wiper utiliza los privilegios elevados ya presentes en el token del proceso. Elimina los puntos de restauración mediante la API System Restore (srclient.dll; SRSetRestorePoint y SRRemoveRestorePoint). No se observa una explotación para elevar privilegios: el malware depende de derechos previamente disponibles.",
+      "technique_id": "T1490",
+      "tactic_id": "impact",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-action--bf14c8c9-15f7-4fde-a967-6558f4bf3ecf"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--bf14c8c9-15f7-4fde-a967-6558f4bf3ecf",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Sobrescritura de los discos físicos",
+      "description": "El wiper identifica los discos físicos y sobrescribe sus sectores con ceros. Kaspersky indica que esta operación se realiza en una primera oleada y vuelve a repetirse al final de la ejecución.",
+      "technique_id": "T1561.001",
+      "tactic_id": "impact",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-action--49e045a6-7293-4cbd-8088-f0a3673ccbcd"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--49e045a6-7293-4cbd-8088-f0a3673ccbcd",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Enumeración de volúmenes y destrucción de ficheros y USN Journal",
+      "description": "Lotus Wiper enumera los volúmenes montados, borra las entradas correspondientes del USN Change Journal y sobrescribe el contenido de los ficheros. Después renombra los ficheros con nombres hexadecimales aleatorios y los elimina; si están bloqueados, programa su eliminación tras el reinicio.",
+      "technique_id": "T1485",
+      "tactic_id": "impact",
+      "confidence": 95,
+      "effect_refs": [
+        "attack-action--5ade9212-d74c-41f6-b4ef-28b5079fbb74"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--5ade9212-d74c-41f6-b4ef-28b5079fbb74",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Segunda oleada de borrado físico y eliminación reiterada de puntos de restauración",
+      "description": "Al completar la fase de borrado de ficheros, Lotus Wiper vuelve a sobrescribir los discos físicos y repite la eliminación de los puntos de restauración. El resultado perseguido es impedir la recuperación del sistema y de los datos.",
+      "technique_id": "T1561.001",
+      "tactic_id": "impact",
+      "confidence": 95
+    },
+    {
+      "type": "attack-condition",
+      "spec_version": "2.1",
+      "id": "attack-condition--43769eff-18f1-4fb2-a2a6-20ec32a15743",
+      "created": "2026-11-20T10:51:42.862Z",
+      "modified": "2026-11-20T10:51:42.862Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "description": "¿Existe el marcador XML que indica que la cadena ya se ejecutó en este equipo?",
+      "on_true_refs": [
+        "attack-action--f3aef169-81b6-4dab-91a9-ca27dd05d4a0"
+      ],
+      "on_false_refs": [
+        "attack-action--5bb84871-7f28-424d-9446-5a69307864ec"
+      ],
+      "confidence": 90
+    },
+    {
+      "type": "attack-action",
+      "spec_version": "2.1",
+      "id": "attack-action--e907fb9e-c702-4cfe-b19f-318770b840e7",
+      "created": "2026-11-20T10:51:55.487Z",
+      "modified": "2026-11-20T10:51:55.487Z",
+      "name": "Intento de detener y deshabilitar el servicio UI0Detect",
+      "description": "OhSyncNow.bat intenta consultar, detener y deshabilitar UI0Detect. Kaspersky indica que este servicio mostraba avisos cuando servicios en Session 0 intentaban presentar interfaces gráficas; la acción podría reducir avisos visibles. En versiones modernas de Windows el servicio ya no está disponible. El mapeo T1489 representa la detención del servicio, no la desactivación de un EDR.",
+      "technique_id": "T1489",
+      "tactic_id": "impact",
+      "confidence": 90,
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "effect_refs": [
+        "attack-action--d46ba06f-e7b3-4d89-9e96-24d6ce921a65"
+      ]
+    }
+  ]
+}
